@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASpace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ASpace-1.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-md navbar-expand-lg fixed-top border-bottom" style="background-color: white">
+        <div class="container" >
+          <a class="navbar-brand" href="#">
+                <img src="ASpace-1.png" alt="" width="50" height="50">
+                <!-- <h4 style="color:#f7549d; display:inline;"> ASpace</h4> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form ms-lg-auto ms-md-auto my-2" style="width: 50%">
+                <div class="row justify-content-md-center" style="border: 1px solid rgb(203, 200, 200); border-radius: 30px;  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                    <div class="col-sm">
+                        <div class="form mb-3 mt-3">
+                            <input type="text" class="form-control" id="where" placeholder="Where to?" name="where" style="font-size: 80%">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form mt-3 mb-3">
+                            <input type="text" class="form-control" id="when" placeholder="When?" name="when" style="font-size: 80%">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form mt-3 mb-3">
+                            <input type="text" class="form-control" id="what" placeholder="What place?" name="what" style="font-size: 80%">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form mt-3 mb-3">
+                            <input class="form-control" id="num" name="num" placeholder="Guest number" style="font-size: 80%"></input>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="mt-3 mb-3">
+                            <button type="submit"><img src="images/search.png"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Host</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Log in</a></li>
+                    <li><a class="dropdown-item" href="#">Sign up</a></li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </header>
+    <main>
+        <div class="container-fluid fill">
+        <div class="container" style="height: 20vh"></div>
+        <div class="container" style="height: 25vh">
+        <h1 class="text-center">Find a place to</h1>
+        
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="https://images.seattletimes.com/wp-content/uploads/2022/07/083038.jpg?d=780x520" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="https://newtheory.com/wp-content/uploads/2017/03/go-game_custom-7fc6e800a9cb5776e7a332119401cd3ca930ddd0-s900-c85.jpeg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://worldexpeditions.com/Portals/World%20Expeditions/LiveBlog/WP-Images/Barsana_Holi_Festival-500px.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    <div class="container" style="height: 40vh">
+        <div class="row row-cols-lg-4 row-cols-md-4 row-cols-2 g-3">
+            <div class="col">
+              <div class="card">
+                <a href="#"><img src="images/game_room.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                    <span class="rating"><span class="material-icons">grade</span>4.3</span>
+                  </h5>
+                  <p class="card-text">Game Room<br />$<span
+                          class="price">10</span> per hour</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="#"><img src="images/garage.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"></a>
+                  <div class="card-body">
+                    <h5 class="card-title"><a class='location' href="#">Allen, TX</a>
+                      <span class="rating"><span class="material-icons">grade</span>4.5</span>
+                    </h5>
+                    <p class="card-text">Garage<br />$<span
+                            class="price">12</span> per hour</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <a href="#"><img src="images/kitchen.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"></a>
+                  <div class="card-body">
+                    <h5 class="card-title"><a class='location' href="#">Plano, TX</a>
+                      <span class="rating"><span class="material-icons">grade</span>4.0</span>
+                    </h5>
+                    <p class="card-text">Kitchen<br />$<span
+                            class="price">20</span> per hour</p>
+                  </div>
+                </div>
+              </div>
+            <div class="col">
+              <div class="card">
+                <a href="#"><img src="images/yard.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                    <span class="rating"><span class="material-icons">grade</span>4.1</span>
+                  </h5>
+                  <p class="card-text">Yard<br />$<span
+                          class="price">10</span> per hour</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid fill" style="background-color:rgb(254, 231, 245)">
+        <div class="container below-header"></div>
+        <div class="container text-center">
+            <div class="row">
+            <div class="col-lg-4 mb-5">
+              <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="row">
+                    <h1 class="title_p2"> Categories</h1>
+                    <h2 class="content_p2 item-md-invisible"> Explore more space <br> to  experience  a<br> variety   of life <br>in  ASpace</h2>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+            <div class="row row-cols-lg-3 row-cols-md-3 row-cols-2 g-5">
+                <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/game_room.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">GameRoom</div>
+                        </a>
+                    </div>
+                  </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/garage.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">Garage</div>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/kitchen.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">Kitchen</div>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/bedroom.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">Bedroom</div>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/yard.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">Yard</div>
+                        </a>
+                    </div>
+                  </div>
+                <div class="col item-sm-invisible">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/studyroom.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">WorkSpace</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col item-sm-invisible">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/diningroom.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">DiningRoom</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col item-sm-invisible">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/toolroom.jpg" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">ToolRoom</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="listing.html"><img src="images/story-3.png" class="card-img transbox" alt="Hollywood Sign on The Hill">
+                            <div class="centered text-in-card">More..</div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fill" style="background-color:aliceblue">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card signup_form_border" style="border-radius: 15px;">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5 form_text">Create an account</h2>
+                  <form class="signup_form">
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example1cg">Your Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example3cg">Your Email</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example4cg">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                    </div>
+
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                      <label class="form-check-label" for="form2Example3g">
+                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                      </label>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                      <button type="button"
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 button_color">Register</button>
+                    </div>
+
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                        class="fw-bold text-body"><u>Login here</u></a></p>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col item-md-invisible">
+              <h1 class="title_p3"> Sign Up</h1>
+              <h2 class="content_p3 item-md-invisible"> Can't wait for <br> you  to  join us</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+    <footer class="text-center">
+      <p>© 2022 ASpace, Inc.  <a class="footer-hyp" href="#">Privacy</a> · <a class="footer-hyp" href="#">Terms</a> · <a class="footer-hyp" href="#">Help</a></p>
+    </footer>
+  </body>
+</html>
