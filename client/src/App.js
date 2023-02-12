@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import HeaderComponent from './components/header_component';
 import HomeComponent from './components/home_component';
+import FooterComponent from './components/footer_component';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeComponent/>} />
       </Routes>
+      <FooterComponent />
     </div>
   );
 }
