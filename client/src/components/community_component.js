@@ -7,14 +7,13 @@ const CommunityComponent = (props) => {
     let { currentUser, setCurrentUser } = props;
 
     console.log(currentUser);
-
     const [event, setEvent] = useState([]);
 
     //get data from DB
     const getData = () => {
         CommunityService.getEvents()
             .then((event) => {
-                console.log(event);
+                // console.log(event);
                 setEvent(event.data);
             })
             .catch((err) => {
@@ -30,7 +29,7 @@ const CommunityComponent = (props) => {
     return (
         <div>
             {
-                currentUser.user.community === null && (
+                !currentUser.user.community && (
                     <div>
                         <div>You must belong to a community!</div>
                         <div>You must belong to a community!</div>
@@ -44,7 +43,7 @@ const CommunityComponent = (props) => {
                 )
             }
 
-            {currentUser.user.community !== null && (
+            {currentUser.user.community && (
                 <div className="container" id="eventList">
                     <ListEvent data={event} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />
                 </div>

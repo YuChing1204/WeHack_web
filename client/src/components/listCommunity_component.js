@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import CommunityService from "../services/community.service";
+import { useNavigate } from 'react-router-dom';
 import "../styles/listing.css"
 
 const ListCommunity = (props) => {
   let { data, currentUser, setCurrentUser } = props;
+  const navigate = useNavigate();
+
+  const joinCommunity = (e) => {
+    console.log(e.target.id);
+    CommunityService.joinCommunity(e.target.id, currentUser.user._id)
+    .then(() => {
+      window.alert("Join Community");
+      console.log("ListCommunity");
+      console.log(currentUser)
+      navigate("/community");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
 
   return (
     <div className="row" id="listing">
@@ -17,7 +33,9 @@ const ListCommunity = (props) => {
                   <a>hello</a>
                   <h5 className="card-title">{community.location}</h5>
                   <p className="card-text">{community.description}</p>
-                  <a href="#" className="btn btn-primary">JOIN</a>
+                  <button className="btn btn-secondary" onClick={joinCommunity} id={community._id}>
+                    Join
+                  </button>
                 </div>
               </div>
             </div>)
