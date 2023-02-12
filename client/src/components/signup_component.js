@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/signup.css";
 import { useNavigate } from "react-router-dom";
-import AuthService from "../services/auth.service.js";
+// import AuthService from "../services/auth.service";
 
 const SignupComponent = () => {
   const navigate = useNavigate();
@@ -9,7 +9,6 @@ const SignupComponent = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [role, setRole] = useState("");
-//   let [host, setIsHost] = useState("");
   let [message, setMessage] = useState("");
 
   const handleChangeUsername = (e) => {
@@ -24,21 +23,18 @@ const SignupComponent = () => {
   const handleChangeRole = (e) => {
     setRole(e.target.value);
   };
-//   const handleChnageRole = (e) => {
-//     setRole(e.target.value);
-//   };
   const handleRegister = () => {
-    AuthService.register(username, email, password, role)
-      .then(() => {
-        window.alert(
-          "Registration succeeds. You are now redirected to the login page."
-        );
-        navigate('/login');
-      })
-      .catch((error) => {
-        console.log(error.response);
-        setMessage(error.response.data);
-      });
+    // AuthService.register(username, email, password, role)
+    //   .then(() => {
+    //     window.alert(
+    //       "Registration succeeds. You are now redirected to the login page."
+    //     );
+    //     navigate('/login');
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.response);
+    //     setMessage(error.response.data);
+    //   });
   };
 
   return (

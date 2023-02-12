@@ -4,13 +4,13 @@ const HomeP1Component = () => {
   return (
     <div>
         <div className="container" style={{height: "15vh"}}></div>
-        <h1 className="text-center">Find a place to</h1>
+        <h1 className="text-center" style={{color: "hsl(151, 97%, 47%)"}}>Bringing Love. Connecting Communities.</h1>
 
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
-                <button style={{backgroundColor: "red"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="carousel_button" aria-label="Slide 1"></button>
-                <button style={{backgroundColor: "red"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" className="active carousel_button" aria-current="true"></button>
-                <button style={{backgroundColor: "red"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className="carousel_button"></button>
+                <button style={{backgroundColor: "hsl(151, 97%, 47%)"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="carousel_button" aria-label="Slide 1"></button>
+                <button style={{backgroundColor: "hsl(151, 97%, 47%)"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" className="active carousel_button" aria-current="true"></button>
+                <button style={{backgroundColor: "hsl(151, 97%, 47%)"}} type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className="carousel_button"></button>
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item">
