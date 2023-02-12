@@ -2,7 +2,21 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/api/community";
 
 class CommunityService {
-  // rcreate new community
+  
+  getAll() {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.get(API_URL + "/list", {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+  // create new community
   createCommunity(
     location,
     description) {

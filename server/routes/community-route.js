@@ -12,7 +12,7 @@ router.use((req, res, next) => {
 });
 
 // Get all community
-router.get("/", (req, res) => {
+router.get("/list", (req, res) => {
     Community.find({})
       .then((community) => {
         res.send(community);

@@ -1,60 +1,58 @@
-import React, {useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
-// import PropertyService from "../services/property.service";
+import React, { useState, useEffect } from 'react'
+import CommunityService from "../services/community.service";
 import "../styles/listing.css"
 
 const ListCommunity = (props) => {
-    // let {original, properties, search, currentUser, setCurrentUser} = props;
-    // const navigate = useNavigate();
+  let { data, currentUser, setCurrentUser } = props;
 
-    // const rows = [];
-    // const index = properties.findIndex(obj => {
-    //     return obj._id === isClick.id;
-    //   });
-
-    //     return (
-    //         <div className="row" id="listing">
-    //             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-    //                 {
-    //                     rows.map(property => {
-    //                         return <CardComponent key={property._id} properties={property} isClick={isClick} setClick={setClick}/>
-    //                     })
-    //                 }
-    //             </div>
-    //         </div>
-    //     )
+  return (
+    <div className="row" id="listing">
+      <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+        
+        {
+          data.map((community) => 
+            (<div className="col">
+              <div className="card text-center mb-4 communityCard">
+                <div className="card-body">
+                  <a>hello</a>
+                  <h5 className="card-title">{community.location}</h5>
+                  <p className="card-text">{community.description}</p>
+                  <a href="#" className="btn btn-primary">JOIN</a>
+                </div>
+              </div>
+            </div>)
+          )}
+      </div>
+    </div>
+  )
 }
 
 const ListCommunityComponent = (props) => {
-    // // console.log(search);
-    // let { search, setSearch, currentUser, setCurrentUser } = props;
-    // const [filtered, setFiltered] = useState([]);
-    // const [activeCategory, setActiveCategory] = useState('');
-    // const [data,setData]=useState([]);
 
-    // //get data from DB
-    // const getData = () => {
-    //     // PropertyService.getAll()
-    //     // .then((data) => {
-    //     //   console.log(data);
-    //     //   setData(data.data);
-    //     //   setFiltered(data.data);
-    //     // })
-    //     // .catch((err) => {
-    //     //   console.log(err);
-    //     // });
-        
-    // }
-    // useEffect(()=>{
-    //     getData()
-    // },[])
+  const [data, setData] = useState([]);
+
+  //get data from DB
+  const getData = () => {
+    CommunityService.getAll()
+      .then((data) => {
+        console.log(data);
+        setData(data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  }
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <div>
       <p>dddd</p>
-        {/* <div className="container" id="housing"> */}
-            {/* <ListCommunity original={data} properties={filtered} search={search} currentUser={currentUser} setCurrentUser={setCurrentUser}/> */}
-        {/* </div> */}
+      <div className="container" id="communityList">
+        <ListCommunity data={data} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />
+      </div>
     </div>
   )
 }
