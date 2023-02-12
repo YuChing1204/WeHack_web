@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import CommunityService from "../services/community.service";
-import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 const PostCommunityComponent = (props) => {
-    let { currentUser, setCurrentUser } = props;
     let [location, setLocation] = useState("");
     let [description, setDescription] = useState("");
     let [message, setMessage] = useState("");

@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8080/api/community";
 
 class CommunityService {
   // rcreate new community
-  createCommunity(title,
+  createCommunity(
     location,
     description) {
     let token;

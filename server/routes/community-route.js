@@ -31,9 +31,10 @@ router.post("/", async (req, res) => {
     let { location, description} = req.body;
   
     let newCommunity = new Community({
-      host: req.user._id,
+      admin: req.user._id,
       location,
       description,
+      residents: [req.user._id],
     });
   
     try {
