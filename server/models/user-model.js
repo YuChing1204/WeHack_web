@@ -22,10 +22,10 @@ const userSchema = new mongoose.Schema(
         minLength:6,
         maxLength:1024,
       },
-      community: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Community",
-      },
+    //   community: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Community",
+    //   },
       phone: {
         type: String,
       },

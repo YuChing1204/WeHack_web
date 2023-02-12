@@ -6,8 +6,8 @@ const eventSchema = new mongoose.Schema({
         ref: "User",
     },
     participant:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        type: [String],
+        default: [],
     },
     title:{
         type: String,

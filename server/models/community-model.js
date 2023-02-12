@@ -13,6 +13,10 @@ const communitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    residents: {
+        type: [String],
+        default: [],
+    },
 });
 
 const Community = mongoose.model("Community", communitySchema);
