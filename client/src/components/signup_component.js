@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import "../styles/signup.css";
 import { useNavigate } from "react-router-dom";
-// import AuthService from "../services/auth.service";
+import AuthService from "../services/auth.service";
 
 const SignupComponent = () => {
   const navigate = useNavigate();
   let [username, setUsername] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let [role, setRole] = useState("");
   let [message, setMessage] = useState("");
 
   const handleChangeUsername = (e) => {
@@ -20,21 +19,18 @@ const SignupComponent = () => {
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleChangeRole = (e) => {
-    setRole(e.target.value);
-  };
   const handleRegister = () => {
-    // AuthService.register(username, email, password, role)
-    //   .then(() => {
-    //     window.alert(
-    //       "Registration succeeds. You are now redirected to the login page."
-    //     );
-    //     navigate('/login');
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response);
-    //     setMessage(error.response.data);
-    //   });
+    AuthService.register(email, username, password)
+      .then(() => {
+        window.alert(
+          "Registration succeeds. You are now redirected to the login page."
+        );
+        navigate('/login');
+      })
+      .catch((error) => {
+        console.log(error.response);
+        setMessage(error.response.data);
+      });
   };
 
   return (
@@ -74,18 +70,6 @@ const SignupComponent = () => {
                         name="password" 
                     />
                     <label className="form-label" htmlFor="form3Example4cg">Password</label>
-                </div>
-
-
-                <div className="form-outline mb-3">
-                    <input 
-                    onChange={handleChangeRole} 
-                    type="text" 
-                    id="form3Example4cdg" 
-                    className="form-control form-control-lg"
-                    name="role" 
-                    />
-                    <label className="form-label" htmlFor="form3Example4cdg">Role</label>
                 </div>
 
                 <div className="form-check d-flex justify-content-center mb-4">

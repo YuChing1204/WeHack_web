@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-// import AuthService from "../services/auth.service";
+import AuthService from "../services/auth.service";
 import "../styles/header.css";
 
 const HeaderComponent = (props) => {
@@ -8,7 +8,7 @@ const HeaderComponent = (props) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // AuthService.logout();
+    AuthService.logout();
     window.alert("Logout Successfully, you are redirecting to the homepage.");
     setCurrentUser(null);
     navigate("/");
@@ -26,9 +26,9 @@ const HeaderComponent = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <a class="nav-link" href=""><strong>Home</strong></a>
-                <a class="nav-link" href=""><strong>About Us</strong></a>
-                <a class="nav-link" href=""><strong>Help</strong></a>
+                <a className="nav-link" href=""><strong>Home</strong></a>
+                <a className="nav-link" href=""><strong>About Us</strong></a>
+                <a className="nav-link" href=""><strong>Help</strong></a>
                 <li className="nav-item">
                   <span className="nav-link active" aria-current="page">Hi! {currentUser && (currentUser.user.name)}</span>
                 </li>

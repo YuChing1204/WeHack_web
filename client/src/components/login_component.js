@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import AuthService from "../services/auth.service";
+import AuthService from "../services/auth.service";
 
 const LoginComponent = (props) => {
     const navigate = useNavigate();
@@ -17,22 +17,22 @@ const LoginComponent = (props) => {
       setPassword(e.target.value);
     };
     const handleLogin = () => {
-    //   AuthService.login(email, password)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //       if (response.data.token) {
-    //         localStorage.setItem("user", JSON.stringify(response.data));
-    //       }
-    //       window.alert(
-    //         "Login successfully, you are now redirected to the profile page."
-    //       );
-    //       setCurrentUser(AuthService.getCurrentUser());
-    //       navigate('/profile');
-    //     })
-    //     .catch((error) => {
-    //       console.log(error.response);
-    //       setMessage(error.response.data);
-    //     });
+      AuthService.login(email, password)
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.token) {
+            localStorage.setItem("user", JSON.stringify(response.data));
+          }
+          window.alert(
+            "Login successfully, you are now redirected to the profile page."
+          );
+          setCurrentUser(AuthService.getCurrentUser());
+          navigate('/profile');
+        })
+        .catch((error) => {
+          console.log(error.response);
+          setMessage(error.response.data);
+        });
     };
     return (
         <div className="card signup_form_border" style={{borderRadius: 15}}>
