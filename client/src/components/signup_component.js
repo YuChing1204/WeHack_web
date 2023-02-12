@@ -9,11 +9,15 @@ const SignupComponent = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [message, setMessage] = useState("");
+  let [birthday, setBirthday] = useState("");
 
   const handleChangeUsername = (e) => {
     setUsername(e.target.value);
   };
   const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleChangeBirthday = (e) => {
     setEmail(e.target.value);
   };
   const handleChangePassword = (e) => {
@@ -70,6 +74,17 @@ const SignupComponent = () => {
                         name="password" 
                     />
                     <label className="form-label" htmlFor="form3Example4cg">Password</label>
+                </div>
+
+                <div className="form-outline mb-3">
+                    <input 
+                        onChange={handleChangeBirthday}
+                        type="birthday" 
+                        id="form3Example3cg" 
+                        className="form-control form-control-lg"
+                        name="birthday"
+                    />
+                    <label className="form-label" htmlFor="form3Example3cg">Birthday</label>
                 </div>
 
                 <div className="form-check d-flex justify-content-center mb-4">

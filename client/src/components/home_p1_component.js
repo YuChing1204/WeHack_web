@@ -22,13 +22,13 @@ const HomeP1Component = () => {
                 <div className="carousel-item active">
                     {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="none"></rect></svg> */}
                     <div className="container" style={{width: "900px"}}>
-                        <img src="./images/image.png" className="d-block w-100" alt="..."></img>
+                        <img src="./images/party.png" className="d-block w-100" alt="..."></img>
                     </div>
                 </div>
                 <div className="carousel-item">
                     {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="none"></rect></svg> */}
                     <div className="container" style={{width: "900px"}}>
-                        <img src="./images/image.png" className="d-block w-100" alt="..."></img>
+                        <img src="./images/Shogi-.png" className="d-block w-100" alt="..."></img>
                     </div>
                 </div>
             </div>

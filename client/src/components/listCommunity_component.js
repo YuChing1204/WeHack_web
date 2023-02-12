@@ -67,7 +67,6 @@ const ListCommunityComponent = (props) => {
 
   return (
     <div>
-      <p>dddd</p>
       <div className="container" id="communityList">
         <ListCommunity data={data} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />
       </div>

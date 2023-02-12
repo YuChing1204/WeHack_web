@@ -31,14 +31,12 @@ const CommunityComponent = (props) => {
             {
                 !currentUser.user.community && (
                     <div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
+                        <div>
+                            <h1>You must belong to a community!</h1>
+                            </div>
 
-                        <a className="dropdown-item" href="/list">Join a Community</a>
-                        <a className="dropdown-item" href="/create">Create a Community</a>
+                        <button><a className="dropdown-item" href="/list">Join a Community</a></button>
+                        <button><a className="dropdown-item" href="/create">Create a Community</a></button>
                     </div>
                 )
             }

@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import CommunityService from "../services/community.service";
+import { useNavigate } from 'react-router-dom';
 import "../styles/listing.css"
 
 const ListEvent = (props) => {
   let { data, currentUser, setCurrentUser } = props;
+  const navigate = useNavigate();
+
+  const joinEvent = (e) => {
+    console.log(e.target.id);
+    CommunityService.joinEvent(e.target.id, currentUser.user._id)
+    .then(() => {
+      window.alert("Join Event");
+      console.log("ListEvent");
+      console.log(currentUser)
+      navigate("/community");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
 
   return (
     <div className="row" id="listing">
@@ -20,7 +36,9 @@ const ListEvent = (props) => {
                   <h5 className="card-title">{event.location}</h5>
                   <p className="card-text">{event.description}</p>
                   <p className="card-text">{event.date}</p>
-                  <a href="#" className="btn btn-primary">JOIN</a>
+                  <button className="btn btn-secondary" onClick={joinEvent} id={event._id}>
+                    Join
+                  </button>
                 </div>
               </div>
             </div>)

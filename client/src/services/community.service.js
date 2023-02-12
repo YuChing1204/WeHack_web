@@ -73,6 +73,46 @@ class CommunityService {
     );
   }
 
+  // join event
+  joinEvent(_id, user_id) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+
+    return axios.post(
+      API_URL + "/event" + "/register/" + _id,
+      { user_id },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  }
+
+  // get user event
+  getUserEvent(user_id) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+
+    return axios.get(
+      API_URL + "/event",
+      { user_id },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  }
+
 }
 
 export default new CommunityService();

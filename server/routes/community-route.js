@@ -168,6 +168,20 @@ router.get("/", async (req, res) => {
   //   });
 });
 
+// Get user's event
+router.get("/event", async (req, res) => {
+  let user = req.user._id;
+  console.log("participant")
+  console.log(user)
+
+  try {
+    let event = await Event.find({ participant: user });
+    res.send(event);
+  } catch (err) {
+    res.send(err);
+  }
+});
+
 //Update Event
 router.put("/event/:id", async(req, res, next)=>{
     try{

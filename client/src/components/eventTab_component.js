@@ -15,7 +15,7 @@ const EventTab = (props) => {
         }
 
         if (currentUser.user !== null) {
-            CommunityService.getJoinEvents(_id)
+            CommunityService.getUserEvent(_id)
                 .then((data) => {
                     console.log(data);
                     setEventData(data.data);
@@ -42,7 +42,7 @@ const EventTab = (props) => {
     return (
         <div>
             <p>Here's your upcomming events.</p>
-            {eventData.map((event) => (
+            {/* {eventData.map((event) => (
                 <div className="card" style={{ width: "18rem" }}>
                     <div className="card-body">
                         <h5 className="card-title">{event.title}</h5>
@@ -53,7 +53,7 @@ const EventTab = (props) => {
                         <br />
                     </div>
                 </div>
-            ))}
+            ))} */}
         </div>
     )
 
