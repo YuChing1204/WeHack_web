@@ -23,8 +23,8 @@ function App() {
         <Route path="/register" element={<SignupComponent/>} />
         <Route path="/profile" element={<ProfileComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/community" element={<CommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-        <Route path="/community/create" element={<PostCommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-        <Route path="/community/list" element={<ListCommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/create" element={<PostCommunityComponent/>} />
+        <Route path="/list" element={<ListCommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
       </Routes>
       <FooterComponent />
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CommunityService from "../services/community.service";
 import { useNavigate } from "react-router-dom";
 
-const PostCommunityComponent = (props) => {
+const PostCommunityComponent = () => {
     let [location, setLocation] = useState("");
     let [description, setDescription] = useState("");
     let [message, setMessage] = useState("");

@@ -39,6 +39,10 @@ router.post("/", async (req, res) => {
   
     try {
       await newCommunity.save();
+      let community = await Community.findOne( newCommunity._id );
+      console.log(community)
+      let updatedUser = await User.findByIdAndUpdate(req.user._id, {community: community._id}, {new:true});
+
       res.status(200).send("New community has been saved.");
     } catch (err) {
       res.status(400).send("Cannot save community.");
