@@ -148,6 +148,26 @@ router.post("/event", async (req, res) => {
   }
 });
 
+// Get all events of the user's community
+router.get("/", async (req, res) => {
+  let community = req.user.community;
+
+  try {
+    let event = await Event.find({ community });
+    res.send(event);
+  } catch (err) {
+    res.send(err);
+  }
+
+  // Event.find({communityID: req.user.community})
+  //   .then((event) => {
+  //     res.send(event);
+  //   })
+  //   .catch(() => {
+  //     res.status(500).send("Error!! Cannot get events!!");
+  //   });
+});
+
 //Update Event
 router.put("/event/:id", async(req, res, next)=>{
     try{

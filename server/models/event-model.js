@@ -5,6 +5,10 @@ const eventSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+    communityID:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Community",
+    },
     participant:{
         type: [String],
         default: [],

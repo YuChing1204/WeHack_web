@@ -8,6 +8,7 @@ import PostCommunityComponent from './components/postCommunity_component';
 import FooterComponent from './components/footer_component';
 import ListCommunityComponent from './components/listCommunity_component';
 import ProfileComponent from './components/profile_component';
+import ListEventComponent from './components/listEvent_component';
 import { Routes, Route } from "react-router-dom";
 import AuthService from "./services/auth.service";
 

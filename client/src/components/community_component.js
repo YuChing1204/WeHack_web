@@ -1,73 +1,55 @@
 import EventComponent from "./event_component";
+import ListEvent from "./listEvent_component";
+import { useState, useEffect } from "react";
+import CommunityService from "../services/community.service";
 
 const CommunityComponent = (props) => {
     let { currentUser, setCurrentUser } = props;
-    // !currentUser.user.community
-    let test = false;
+
     console.log(currentUser);
 
-    //     const [data,setData]=useState([]);
+    const [event, setEvent] = useState([]);
 
-    //     //get data from DB
-    //     const getData = () => {
-    //         EventService.getAll()
-    //         .then((data) => {
-    //           console.log(data);
-    //           setData(data.data);
-    //           setFiltered(data.data);
-    //         })
-    //         .catch((err) => {
-    //           console.log(err);
-    //         });
+    //get data from DB
+    const getData = () => {
+        CommunityService.getEvents()
+            .then((event) => {
+                console.log(event);
+                setEvent(event.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
 
-    //     }
+    }
 
-    //     useEffect(()=>{
-    //         getData()
-    //     },[])
+    useEffect(() => {
+        getData()
+    }, [])
 
     return (
         <div>
             {
-                !currentUser.user.community && (
+                currentUser.user.community === null && (
                     <div>
                         <div>You must belong to a community!</div>
                         <div>You must belong to a community!</div>
                         <div>You must belong to a community!</div>
                         <div>You must belong to a community!</div>
                         <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
-                        <div>You must belong to a community!</div>
+
                         <a className="dropdown-item" href="/list">Join a Community</a>
                         <a className="dropdown-item" href="/create">Create a Community</a>
                     </div>
                 )
             }
 
-            {currentUser.user.community && (
-                <div className="row" id="listing">
-                    <div>
-                        <div className="row col-sm-2 col-md-4 col-lg-4 g-4">
-                            <EventComponent />
-                        </div>
-                        <div className="row col-sm-2 col-md-4 col-lg-4 g-4">
-                            <EventComponent />
-                        </div>
-                        <div className="row col-sm-2 col-md-4 col-lg-4 g-4">
-                            <EventComponent />
-                        </div>
-                        <div className="row col-sm-2 col-md-4 col-lg-4 g-4">
-                            <EventComponent />
-                        </div>
-                        <div className="row col-sm-2 col-md-4 col-lg-4 g-4">
-                            <EventComponent />
-                        </div>
-                    </div>
+            {currentUser.user.community !== null && (
+                <div className="container" id="eventList">
+                    <ListEvent data={event} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />
                 </div>
-
             )}
-        
+
         </div>
     )
 }
