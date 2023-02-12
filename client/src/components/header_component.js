@@ -43,7 +43,7 @@ const HeaderComponent = (props) => {
                     {!currentUser && (<li><a className="dropdown-item" href="/login">Log in</a></li>)}
                     {!currentUser && (<li><a className="dropdown-item" href="/register">Sign up</a></li>)}
                     {currentUser && (<li><a className="dropdown-item" href="/profile">Profile</a></li>)}
-                    {currentUser && currentUser.community && (<li><a className="dropdown-item" href="/community">Community</a></li>)}
+                    {currentUser && (<li><a className="dropdown-item" href="/community">Community</a></li>)}
                     {currentUser && (<li><a onClick={handleLogout} className="dropdown-item" href="/">Log out</a></li>)}
                   </ul>
                 </li>

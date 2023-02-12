@@ -3,6 +3,7 @@
 const router = require("express").Router();
 const Community = require("../models").communityModel;
 const Event = require("../models").eventModel;
+const User = require("../models").userModel;
 // const propertyValidation = require("../validation").propertyValidation;
 
 router.use((req, res, next) => {
@@ -58,11 +59,10 @@ router.put("/:id", async(req, res, next)=>{
 router.post("/join/:_id", async (req, res) => {
   let { _id } = req.params;
   let user_id = req.user._id;
-  console.log(_id);
-  console.log(user_id);
 
   try {
     let community = await Community.findOne({ _id });
+    let updatedUser = await User.findByIdAndUpdate(user_id, {community: _id}, {new:true});
     community.residents.push(user_id);
     await community.save();
     res.send("Join completed.");
