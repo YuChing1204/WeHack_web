@@ -26,7 +26,7 @@ const HeaderComponent = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <a className="nav-link" href=""><strong>Home</strong></a>
+                <a className="nav-link" href="/"><strong>Home</strong></a>
                 <a className="nav-link" href=""><strong>About Us</strong></a>
                 <a className="nav-link" href=""><strong>Help</strong></a>
                 <li className="nav-item">
@@ -44,6 +44,7 @@ const HeaderComponent = (props) => {
                     {!currentUser && (<li><a className="dropdown-item" href="/register">Sign up</a></li>)}
                     {currentUser && (<li><a className="dropdown-item" href="/profile">Profile</a></li>)}
                     {currentUser && (<li><a className="dropdown-item" href="/community">Community</a></li>)}
+                    {currentUser && (<li><a className="dropdown-item" href="/event">My events</a></li>)}
                     {currentUser && (<li><a onClick={handleLogout} className="dropdown-item" href="/">Log out</a></li>)}
                   </ul>
                 </li>

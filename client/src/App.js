@@ -11,6 +11,7 @@ import ProfileComponent from './components/profile_component';
 import ListEventComponent from './components/listEvent_component';
 import { Routes, Route } from "react-router-dom";
 import AuthService from "./services/auth.service";
+import EventTab from './components/eventTab_component';
 
 function App() {
   let [currentUser, setCurrentUser] = useState(AuthService.getCurrentUser());
@@ -24,6 +25,7 @@ function App() {
         <Route path="/register" element={<SignupComponent/>} />
         <Route path="/profile" element={<ProfileComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/community" element={<CommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/event" element={<EventTab currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/create" element={<PostCommunityComponent/>} />
         <Route path="/list" element={<ListCommunityComponent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
       </Routes>
