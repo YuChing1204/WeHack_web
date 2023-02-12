@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspace</title>
+    <link rel="stylesheet" href="listing.css">
+    <link rel="icon" href="ASpace-1.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-md navbar-expand-lg fixed-top border-bottom" style="background-color: white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="ASpace-1.png" alt="" width="50" height="50">
+                <!-- <h4 style="color:#f7549d; display:inline;"> ASpace</h4> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form ms-lg-auto ms-md-auto my-2" style="width: 50%">
+                    <div class="row justify-content-md-center"
+                        style="border: 1px solid rgb(203, 200, 200); border-radius: 30px;  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                        <div class="col-sm">
+                            <div class="form mb-3 mt-3">
+                                <input type="text" class="form-control" id="where" placeholder="Where to?" name="where"
+                                    style="font-size: 80%">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form mt-3 mb-3">
+                                <input type="text" class="form-control" id="when" placeholder="When?" name="when"
+                                    style="font-size: 80%">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form mt-3 mb-3">
+                                <input type="text" class="form-control" id="what" placeholder="What place?" name="what"
+                                    style="font-size: 80%">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form mt-3 mb-3">
+                                <input class="form-control" id="num" name="num" placeholder="Guest number"
+                                    style="font-size: 80%"></input>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="mt-3 mb-3">
+                                <button type="submit"><img src="images/search.png"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Host</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Log in</a></li>
+                            <li><a class="dropdown-item" href="#">Sign up</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </header>
+    <div class="row sidebar">
+        <div class="container text-center">
+            <div class="btn-group-sm flex-wrap" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">sports_esports</span>
+                    Game Room</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">deck</span>
+                    Yard</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">restaurant_menu</span>
+                    Dining</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">kitchen</span>
+                    Kitchen</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">inventory_2</span>
+                    Basement</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">liquor</span>
+                    Cellar</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">bed</span>
+                    Bedoom</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">warehouse</span>
+                    Garage</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">chair</span>
+                    Living Room</button>
+                <button type="button" class="btn btn-light"><span style='display: block;'
+                        class="material-icons">business_center</span>
+                    Workspace</button>
+                <button type="button" class="btn btn-light"><span class="material-icons">tune</span>
+                    </button>
+                <!-- <div class="filter text-center d-flex justify-content-md-center">
+                    <button type="button" class="btn btn-light btn-sm text-center"><span class="material-icons">tune</span></button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="container" id="housing">
+        <div class="row" id="listing">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/game_room2.jpg" class="card-img-top" alt="game room">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.9</span>
+                                </h5>
+                                <p class="card-text">Game Room<br />$<span class="price">18</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/game_room1.jpg" class="card-img-top" alt="game room">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.3</span>
+                                </h5>
+                                <p class="card-text">Game Room<br />$<span
+                                        class="price">10</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/yard1.jpg" class="card-img-top" alt="yard">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Richardson, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.5</span>
+                                </h5>
+                                <p class="card-text">Yard<br />$<span
+                                        class="price">15</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/yard3.jpg" class="card-img-top" alt="yard">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.8</span>
+                                </h5>
+                                <p class="card-text">Yard with Jacuzzi<br />$<span
+                                        class="price">25</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/yard4.jpg" class="card-img-top" alt="yard">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Plano, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.7</span>
+                                </h5>
+                                <p class="card-text">Yard<br />$<span
+                                        class="price">35</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/studyroom.jpg" class="card-img-top" alt="study">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Garland, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.9</span>
+                                </h5>
+                                <p class="card-text">Beautiful Study<br />$<span
+                                        class="price">15</span> per hour</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/cellar.jpg" class="card-img-top" alt="cellar">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Allen, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>5.0</span>
+                                </h5>
+                                <p class="card-text">Modern Wine Cellar<br />$<span
+                                        class="price">10</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/bedroom.jpg" class="card-img-top" alt="bedroom">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.1</span>
+                                </h5>
+                                <p class="card-text">Comfy Bedroom<br />$<span
+                                        class="price">5</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/kitchen.jpg" class="card-img-top" alt="kitchen">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Richardson, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.2</span>
+                                </h5>
+                                <p class="card-text">Modern Kitchen<br />$<span
+                                        class="price">19</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/study-room.jpg" class="card-img-top" alt="study">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Dallas, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.5</span>
+                                </h5>
+                                <p class="card-text">Home Office<br />$<span
+                                        class="price">10</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/livingroom1.jpg" class="card-img-top" alt="living room">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Carollton, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.6</span>
+                                </h5>
+                                <p class="card-text">Living Room<br />$<span
+                                        class="price">15</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/garage.jpg" class="card-img-top" alt="garage">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class='location' href="#">Frisco, TX</a>
+                                    <span class="rating"><span class="material-icons">grade</span>4.2</span>
+                                </h5>
+                                <p class="card-text">Garage<br />$<span
+                                        class="price">1</span> per hour</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class="text-center">
+        <p>© 2022 ASpace, Inc. <a class="footer-hyp" href="#">Privacy</a> · <a class="footer-hyp" href="#">Terms</a> ·
+            <a class="footer-hyp" href="#">Help</a>
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
